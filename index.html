@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ahmed Mohamed · Software Engineer</title>
+  <meta name="description" content="Portfolio of Ahmed Mohamed – Software Engineer specializing in real‑time booking & payment systems (Node.js/.NET + Angular/React + PostgreSQL/SQL Server)." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0b1220;
+      --card: #121a2b;
+      --muted: #72809b;
+      --text: #e8edf8;
+      --brand: #1A2D42; /* your primary color */
+      --accent: #4cc9f0;
+      --ring: rgba(76,201,240,.35);
+      --ok: #3ddc97;
+      --warn: #ffb703;
+      --danger: #ef476f;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0}
+    body{
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 10% -10%, rgba(76,201,240,.08), transparent 60%),
+                  radial-gradient(900px 500px at 110% 10%, rgba(26,45,66,.6), transparent 60%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1100px; margin:0 auto; padding:24px}
+
+    /* header */
+    header{position:sticky; top:0; z-index:10; backdrop-filter: blur(8px); background: linear-gradient(180deg, rgba(11,18,32,.8), rgba(11,18,32,.35)); border-bottom:1px solid rgba(255,255,255,.06)}
+    nav{display:flex; align-items:center; justify-content:space-between; gap:16px}
+    .brand{display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.3px}
+    .badge{font-size:.72rem; padding:4px 8px; border:1px solid rgba(255,255,255,.12); border-radius:999px; color:var(--muted)}
+    .navlinks a{margin-left:18px}
+    .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.12); background:linear-gradient(180deg, rgba(26,45,66,.65), rgba(26,45,66,.3)); color:var(--text)}
+    .btn:hover{box-shadow:0 0 0 3px var(--ring)}
+
+    /* hero */
+    .hero{display:grid; grid-template-columns:1.2fr .8fr; gap:24px; padding:46px 0}
+    .card{background:linear-gradient(180deg, rgba(18,26,43,.9), rgba(18,26,43,.65)); border:1px solid rgba(255,255,255,.08); border-radius:20px; padding:24px}
+    h1{font-size:2.25rem; line-height:1.15; margin:0 0 10px}
+    .lead{color:var(--muted)}
+    .chips{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px}
+    .chip{padding:6px 10px; border:1px solid rgba(255,255,255,.12); border-radius:999px; font-size:.85rem; color:#cfe5ff; background:rgba(76,201,240,.05)}
+
+    /* sections */
+    section{margin-top:28px}
+    .section-title{display:flex; align-items:center; justify-content:space-between}
+    .section-title h2{margin:0; font-size:1.35rem}
+    .grid{display:grid; gap:16px}
+
+    /* skills */
+    .skills{grid-template-columns:repeat(2, 1fr)}
+    .skill-col h3{margin:0 0 8px; color:#c7d6ee; font-size:1.05rem}
+    .skill-tags{display:flex; flex-wrap:wrap; gap:8px}
+    .tag{padding:6px 10px; background:#111827; border:1px solid rgba(255,255,255,.08); border-radius:999px; color:#cbd5e1; font-size:.85rem}
+
+    /* projects */
+    .toolbar{display:flex; gap:10px; flex-wrap:wrap}
+    .filter{cursor:pointer}
+    .card.project{display:flex; flex-direction:column; gap:10px}
+    .project .meta{display:flex; flex-wrap:wrap; gap:8px; font-size:.8rem; color:var(--muted)}
+    .project h3{margin:0}
+
+    /* footer */
+    footer{margin:36px 0 80px; color:var(--muted); text-align:center}
+
+    /* responsive */
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr}
+    }
+    @media (max-width: 700px){
+      .skills{grid-template-columns:1fr}
+      .navlinks{display:none}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z" stroke="#4cc9f0" stroke-width="1.5"/><path d="M12 7l4 2.25v4.5L12 16l-4-2.25v-4.5L12 7z" fill="#4cc9f0" fill-opacity=".25"/></svg>
+          Ahmed Mohamed · <span class="badge">Software Engineer</span>
+        </div>
+        <div class="navlinks">
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#niche">Niche</a>
+          <a href="#contact">Contact</a>
+          <a class="btn" href="cv.pdf" download>Download CV</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <div class="hero">
+      <section class="card">
+        <h1>Building Real‑time Booking & Payment Systems</h1>
+        <p class="lead">I specialize in Node.js/.NET backends with Angular/React frontends to deliver secure, real‑time apps for cinemas, clinics, events, and transport. Integrations include Paymob, Stripe, and Visa; data stores with PostgreSQL & SQL Server; live experiences with WebSockets & MQTT.</p>
+        <div class="chips">
+          <span class="chip">Node.js · Express</span>
+          <span class="chip">.NET 8</span>
+          <span class="chip">Angular 16/18 · React 18</span>
+          <span class="chip">PostgreSQL · SQL Server</span>
+          <span class="chip">WebSockets · MQTT</span>
+          <span class="chip">Docker · Ansible</span>
+        </div>
+      </section>
+      <aside class="card">
+        <div style="display:grid; gap:10px">
+          <div class="section-title"><h2 style="margin:0">Quick Info</h2></div>
+          <div><strong>Location:</strong> Cairo, Egypt</div>
+          <div><strong>Email:</strong> <a href="mailto:ahmedmohamedomarelsenaty@gmail.com">ahmedmohamedomarelsenaty@gmail.com</a></div>
+          <div><strong>Phone:</strong> <a href="tel:+201124300479">+20 1124300479</a></div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap">
+            <a class="btn" href="https://www.linkedin.com/in/ahmed-el-senaty-6726b0321" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn" href="https://github.com/AhmedElSenaty" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- SKILLS -->
+    <section id="skills" class="card">
+      <div class="section-title">
+        <h2>Tech Stack</h2>
+        <span class="badge">filter projects by skill</span>
+      </div>
+      <div class="grid skills">
+        <div class="skill-col">
+          <h3>Back‑end</h3>
+          <div class="skill-tags">
+            <button class="tag filter" data-skill="node">Node.js</button>
+            <button class="tag filter" data-skill="express">Express</button>
+            <button class="tag filter" data-skill="dotnet">.NET</button>
+            <button class="tag filter" data-skill="laravel">Laravel</button>
+          </div>
+        </div>
+        <div class="skill-col">
+          <h3>Front‑end</h3>
+          <div class="skill-tags">
+            <button class="tag filter" data-skill="angular">Angular</button>
+            <button class="tag filter" data-skill="react">React</button>
+            <button class="tag filter" data-skill="flutter">Flutter</button>
+          </div>
+        </div>
+        <div class="skill-col">
+          <h3>Databases</h3>
+          <div class="skill-tags">
+            <button class="tag filter" data-skill="postgres">PostgreSQL</button>
+            <button class="tag filter" data-skill="sqlserver">SQL Server</button>
+            <button class="tag filter" data-skill="mysql">MySQL</button>
+            <button class="tag filter" data-skill="mongo">MongoDB</button>
+            <button class="tag filter" data-skill="redis">Redis</button>
+            <button class="tag filter" data-skill="neo4j">Neo4j</button>
+          </div>
+        </div>
+        <div class="skill-col">
+          <h3>APIs & Real‑time</h3>
+          <div class="skill-tags">
+            <button class="tag filter" data-skill="rest">REST</button>
+            <button class="tag filter" data-skill="graphql">GraphQL</button>
+            <button class="tag filter" data-skill="websocket">WebSockets</button>
+            <button class="tag filter" data-skill="mqtt">MQTT</button>
+          </div>
+        </div>
+        <div class="skill-col">
+          <h3>DevOps & Tools</h3>
+          <div class="skill-tags">
+            <span class="tag">Docker</span>
+            <span class="tag">Ansible</span>
+            <span class="tag">Git</span>
+            <span class="tag">Figma</span>
+            <span class="tag">Jira</span>
+          </div>
+        </div>
+        <div class="skill-col">
+          <h3>UI Frameworks</h3>
+          <div class="skill-tags">
+            <span class="tag">Bootstrap 5</span>
+            <span class="tag">Angular Material</span>
+            <span class="tag">Chart.js</span>
+            <span class="tag">Google Maps</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NICHE -->
+    <section id="niche" class="card">
+      <div class="section-title"><h2>Niche</h2></div>
+      <p><strong>Statement:</strong> I build <em>real‑time booking and payment systems</em> for cinemas, clinics, events, and transport using Node.js/.NET with Angular/React, integrated with Paymob/Stripe/Visa, and powered by PostgreSQL or SQL Server. Features include live seat/slot updates, secure authentication (JWT/SSO), dashboards, and notifications.</p>
+      <ul>
+        <li><strong>Target Clients:</strong> Cinemas, clinics, event organizers, transportation companies.</li>
+        <li><strong>Key Problems Solved:</strong> double bookings, slow check‑in, lack of online payments, no real‑time status.</li>
+        <li><strong>Core Features:</strong> seat/slot inventory, payment integration, QR/verification, chat/notifications, admin analytics.</li>
+      </ul>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="card">
+      <div class="section-title">
+        <h2>Selected Projects</h2>
+        <div class="toolbar">
+          <button class="btn" id="clearFilters">Clear Filters</button>
+        </div>
+      </div>
+
+      <div class="grid" id="projectGrid" style="grid-template-columns:repeat(auto-fill,minmax(280px,1fr))">
+        <!-- Each project carries data-tech tags for filtering -->
+        <article class="card project" data-tech="html css bootstrap js php mysql">
+          <h3>Vaccine Reservation (College)</h3>
+          <div class="meta">
+            <span>Nov 2023 – Dec 2023</span>
+            <span>Team Lead</span>
+          </div>
+          <p>Patients reserve vaccination dates for first and second dose and get printable certificates.</p>
+          <div class="skill-tags">
+            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Bootstrap</span><span class="tag">JavaScript</span><span class="tag">PHP</span><span class="tag">MySQL</span>
+          </div>
+        </article>
+
+        <article class="card project" data-tech="react axios jwt">
+          <h3>Exam Supervision Request System</h3>
+          <div class="meta">
+            <span>Apr 2025 – Apr 2025</span>
+            <span>Front‑end Dev</span>
+          </div>
+          <p>Applicants apply to be exam supervisors; recruiters review and accept them.</p>
+          <div class="skill-tags">
+            <span class="tag">React</span><span class="tag">axios</span><span class="tag">jwt‑decode</span>
+          </div>
+          <a class="btn" href="https://github.com/Helwan-Software-Engineering-2023/SoftwareEngineering_1" target="_blank" rel="noopener">Repo</a>
+        </article>
+
+        <article class="card project" data-tech="html css js php json">
+          <h3>Freelancer Platform (College)</h3>
+          <div class="meta">
+            <span>Apr 2023 – May 2023</span>
+            <span>Team Lead</span>
+          </div>
+          <p>Freelancers create profiles and apply to jobs; file‑based JSON storage.</p>
+          <div class="skill-tags">
+            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">PHP</span><span class="tag">JSON</span>
+          </div>
+        </article>
+
+        <article class="card project" data-tech="react axios jwt">
+          <h3>Club Management System</h3>
+          <div class="meta">
+            <span>Jun 2025 – Jul 2025</span>
+            <span>Front‑end Dev</span>
+          </div>
+          <p>Members subscribe to the club; staff print subscription forms and member cards.</p>
+          <div class="skill-tags">
+            <span class="tag">React</span><span class="tag">axios</span><span class="tag">jwt‑decode</span>
+          </div>
+          <a class="btn" href="https://github.com/Habiba04/Helwan-University-Club" target="_blank" rel="noopener">Repo</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="card">
+      <div class="section-title"><h2>Contact</h2></div>
+      <p>Open to internships, freelance, and part‑time roles. Best fit: building or improving real‑time booking/payment systems, dashboards, and secure APIs.</p>
+      <ul>
+        <li>Email: <a href="mailto:ahmedmohamedomarelsenaty@gmail.com">ahmedmohamedomarelsenaty@gmail.com</a></li>
+        <li>Phone: <a href="tel:+201124300479">+20 1124300479</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/ahmed-el-senaty-6726b0321" target="_blank" rel="noopener">/in/ahmed-el-senaty-6726b0321</a></li>
+        <li>GitHub: <a href="https://github.com/AhmedElSenaty" target="_blank" rel="noopener">github.com/AhmedElSenaty</a></li>
+      </ul>
+    </section>
+
+    <footer>© <span id="year"></span> Ahmed Mohamed · Built with HTML/CSS/JS</footer>
+  </main>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Simple project filtering by clicking skill tags in the Skills section
+    const grid = document.getElementById('projectGrid');
+    const cards = Array.from(grid.children);
+    const filters = new Set();
+
+    function applyFilters(){
+      cards.forEach(card => {
+        const tech = (card.getAttribute('data-tech')||'').split(/\s+/);
+        const visible = filters.size === 0 || Array.from(filters).every(f => tech.includes(f));
+        card.style.display = visible ? '' : 'none';
+      });
+    }
+
+    document.querySelectorAll('.filter').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const key = btn.dataset.skill;
+        if(filters.has(key)){
+          filters.delete(key); btn.classList.remove('active');
+          btn.style.outline = '';
+        } else {
+          filters.add(key); btn.classList.add('active');
+          btn.style.outline = '3px solid var(--ring)';
+        }
+        applyFilters();
+      });
+    });
+
+    document.getElementById('clearFilters').addEventListener('click', () => {
+      filters.clear();
+      document.querySelectorAll('.filter').forEach(b => {b.classList.remove('active'); b.style.outline='';});
+      applyFilters();
+    });
+  </script>
+</body>
+</html>
