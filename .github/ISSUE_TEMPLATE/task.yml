@@ -1,0 +1,67 @@
+name: Task
+description: Standard template for creating tasks
+title: "[TASK] <short description>"
+labels: ["task"]
+assignees: []
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Title
+      description: Short descriptive title
+      placeholder: e.g. Implement login API
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Background / Context
+      description: Why this task is needed? Business value or user story.
+  - type: textarea
+    id: requirements
+    attributes:
+      label: Requirements & Scope
+      description: Outline of what must be delivered, functional + technical expectations.
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance Criteria
+      description: Testable "done" conditions (Given/When/Then or bullet list).
+  - type: textarea
+    id: deliverables
+    attributes:
+      label: Deliverables
+      description: Code, documentation, test coverage, configs, etc.
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies & Blockers
+      description: Related tasks, risks, or external dependencies.
+  - type: input
+    id: owner
+    attributes:
+      label: Owner / Assignee
+      placeholder: e.g. @username
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - Critical
+        - High
+        - Medium
+        - Low
+  - type: textarea
+    id: checklist
+    attributes:
+      label: Sub-Tasks / Checklist
+      description: Break task into actionable steps.
+      placeholder: |
+        - [ ] Create API endpoint
+        - [ ] Write unit tests
+        - [ ] Update docs
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes & Communication
+      description: Any additional info, environment notes, or references.
